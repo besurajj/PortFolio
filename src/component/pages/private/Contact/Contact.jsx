@@ -3,7 +3,7 @@ import { FaGithub, FaLinkedin, FaWhatsapp, FaEnvelope, FaPhone, FaDownload } fro
 
 const Contact = () => {
   return (
-    <section id="contact" className="min-h-screen flex flex-col items-center justify-center text-white p-6">
+    <section id="contact" className="min-h-screen flex flex-col items-center justify-center  text-white p-6">
       <h2 className="text-4xl font-bold mb-6 text-center">Get in Touch</h2>
       <p className="text-gray-400 text-center mb-8">Connect with me on any platform</p>
 

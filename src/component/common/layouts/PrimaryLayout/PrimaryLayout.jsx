@@ -9,6 +9,9 @@ import { useScroll } from "framer-motion";
 import { motion } from "framer-motion";
 import Home from "../../../pages/private/Home/Home";
 import FloatingMenu from "../../HandButton/FloatingMenu";
+import aiVideo from "../../../../assets/ai.mp4";
+import aiFace from "../../../../assets/aiFace1.mp4";
+
 const PrimaryLayout = () => {
   const { scrollYProgress } = useScroll();
   useEffect(() => {
@@ -17,21 +20,7 @@ const PrimaryLayout = () => {
 
   return (
     <>
-      <motion.div
-        id="scroll-indicator"
-        style={{
-          scaleX: scrollYProgress,
-          position: "fixed",
-          top: 0,
-          left: 0,
-          right: 0,
-          height: 10,
-          originX: 0,
-          backgroundColor: "cyan",
-          rounded:5
-        }}
-      />
-      <main className="w-full min-h-screen flex flex-col bg-gradient-to-b from-[#2d545e] to-[#c89666] text-white">
+      <main className="w-full min-h-screen flex flex-col bg-gradient-to-b from-zinc-900 to-black text-white">
         {/* <FloatingMenu/> */}
         {/* Header (Sticky) */}
         <header className="w-full bg-opacity-30 fixed top-0 z-50">
@@ -41,16 +30,42 @@ const PrimaryLayout = () => {
         </header>
 
         {/* Sections */}
-        <section id="home" className="min-h-screen flex items-center justify-center">
-        <Home />
-      </section>
+        <section
+          id="home"
+          className="min-h-screen flex items-center justify-center bg-gradient-to-b from-black to-zinc-900"
+        >
+          <Home />
+        </section>
 
         <section
           id="about"
-          className="min-h-screen flex items-center justify-center"
+          className="relative min-h-screen flex items-center lg:justify-between"
         >
-          <About />
+          {/* Background Video */}
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            src={aiVideo}
+            className="absolute inset-0 w-full h-full p-2 lg:p-10 object-cover bg-gradient-to-b from-zinc-900 to-black "
+          />
+
+          {/* Smooth Transition from Home to About */}
+          <div className="absolute inset-0 bg-gradient-to-b from-zinc-900 to-black opacity-80 rounded-2xl"></div>
+
+          {/* About Component */}
+          <div className="relative flex flex-col z-10 lg:left-0 border-2 lg:mx-10">
+            <About />
+          </div>
+            <div className="border-2 z-10 max-w-5xl hidden flex-col text-start md:w-[80%] sm:w-[90%] md:p-10 lg:w-[50vh] lg:h-screen lg:mx-20 lg:block">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam
+              temporibus provident nostrum quisquam qui necessitatibus maxime
+              mollitia ullam doloremque vero alias tempore beatae in, dolore,
+              laboriosam facilis totam odit ab.
+            </div>
         </section>
+
         <section
           id="skill"
           className="min-h-screen flex items-center justify-center"
@@ -60,22 +75,22 @@ const PrimaryLayout = () => {
 
         <section
           id="projects"
-          className="min-h-screen flex items-center justify-center"
+          className="min-h-screen flex items-center justify-center bg-gradient-to-b from-zinc-900 to-black"
         >
           <Projects />
         </section>
 
         <section
           id="contact"
-          className="min-h-screen flex items-center justify-center"
+          className="min-h-screen flex items-center justify-center bg-gradient-to-b from-black to-zinc-900"
         >
           <Contact />
         </section>
 
         {/* Footer */}
-        <footer className="w-full bg-black bg-opacity-30 text-center py-4">
-          <Footer />
-        </footer>
+        {/* <footer className="w-full bg-opacity-30 text-center py-4 bg-gradient-to-b from-zinc-900 to-black"> */}
+        <Footer />
+        {/* </footer> */}
       </main>
     </>
   );

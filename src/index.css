@@ -10,3 +10,36 @@
 }
  */
 
+ @font-face {
+  font-family: font1;
+  src: url(./assets/fonts/font.woff2);
+}
+
+@font-face {
+  font-family: font2;
+  src: url(./assets/fonts/font1.woff2)
+}
+
+@font-face {
+  font-family: font3;
+  src: url(./assets/fonts/font2.woff2);
+}
+
+@font-face {
+  font-family: font4;
+  src: url(./assets/fonts/font3.woff2);
+}
+
+@font-face {
+  font-family: font5;
+  src: url(./assets/fonts/font4.woff2);
+}
+
+@font-face {
+  font-family: madefor;
+  src: url(./assets/fonts/madefor-text.var.original.woff2);
+}
+
+
+
+

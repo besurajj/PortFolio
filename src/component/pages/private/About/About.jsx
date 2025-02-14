@@ -3,40 +3,69 @@ import { motion } from "framer-motion";
 import blockgame from "../../../../assets/blockgame.png";
 const About = () => {
   return (
-    <motion.div
-      className="w-full min-h-screen flex flex-col items-center justify-center px-6 py-12 bg-gradient-to-b from-[#2d545e] to-[#c89666] text-white"
-    >
-      {/* Profile Card */}
-      {/* <motion.div
-        className="p-6 sm:p-8 md:p-10 rounded-2xl shadow-lg shadow-cyan-500/50 bg-[#272757] bg-opacity-60 backdrop-blur-lg w-full max-w-xs sm:max-w-md md:max-w-2xl text-center"
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeInOut" }}
-      > */}
-        {/* Profile Image */}
-        <motion.img
-          drag
-          whileTap={{ scale: 2 }}
-          src={blockgame}
-          alt="Profile"
-          className="w-24 sm:w-32 md:w-40 h-24 sm:h-32 md:h-40 rounded-full mx-auto mb-4 border-4 border-[#8686AC]"
-          whileHover={{ scale: 1.1 }}
-        />
+    <section className="w-full max-w-5xl flex flex-col text-start md:w-[80%] sm:w-[90%] md:p-10 lg:left-0 lg:w-full">
+      <h2 className="text-4xl font-extrabold text-white mb-6 text-center sm:text-left mt-10 lg:mt-0 lg:text-5xl font-[font1] uppercase">
+        About Me
+      </h2>
 
-        {/* Name & Role */}
-        <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#8686AC]">
-          Suraj
-        </h1>
-        <p className="text-sm sm:text-lg text-gray-300">MEAN Stack Developer</p>
+      <h3 className="text-2xl text-purple-400 font-semibold mb-4 text-center sm:text-left lg:text-3xl">
+        Passionate MERN Stack Developer & React Enthusiast
+      </h3>
 
-        {/* Bio */}
-        <p className="mt-4 text-gray-200 text-xs sm:text-sm md:text-base leading-relaxed">
-          I am a passionate MEAN Stack Developer, skilled in building scalable
-          web applications. I love solving problems and crafting beautiful user
-          experiences. 🚀
+      <p className="text-gray-300 text-lg leading-relaxed sm:text-left text-start p-3 lg:p-0 ml-3 lg:ml-0 lg:text-xl ">
+        Hi! I'm <span className="text-purple-400 font-semibold">Suraj</span>, a{" "}
+        <span className="text-purple-400 font-semibold">
+          MERN Stack Developer
+        </span>
+        with a deep passion for building scalable and efficient web
+        applications. With expertise in{" "}
+        <span className="text-purple-400 font-semibold">
+          MongoDB, Express.js, React, and Node.js
+        </span>
+        , I love crafting high-performance, user-friendly digital experiences.
+      </p>
+
+      <div className="mt-6">
+        <h3 className="text-2xl font-[font1] uppercase lg:text-3xl text-white font-semibold text-center sm:text-left ">
+          Why React?
+        </h3>
+        <p className="text-gray-400 mt-2 text-xl ml-3 lg:ml-0 text-start p-3 lg:p-0 lg:text-2xl sm:text-left">
+          React’s component-driven approach, performance optimizations, and
+          seamless state management excite me. From building intuitive UI/UX to
+          optimizing performance, I thrive on solving real-world problems using
+          modern technologies.
         </p>
-      {/* </motion.div> */}
-    </motion.div>
+      </div>
+
+      <div className="mt-8">
+        <h3 className="text-2xl text-white font-semibold text-center sm:text-left lg:text-3xl font-[font1] uppercase">
+          What I Love to Build
+        </h3>
+        <ul className="text-gray-300 mt-4 space-y-2 text-start text-lg mx-5 lg:text-xl lg:ml-0 lg:text-start sm:text-left ">
+          <li className="whitespace-normal leading-relaxed">
+            🔹 Dynamic, Interactive Web Apps with React & Next.js
+          </li>
+          <li className="whitespace-normal leading-relaxed">
+            🔹 Scalable Backend Services with Express.js & MongoDB
+          </li>
+          <li className="whitespace-normal leading-relaxed">
+            🔹 Responsive & Elegant UI Designs with Tailwind CSS & Framer Motion
+          </li>
+          <li className="whitespace-normal leading-relaxed">
+            🔹 Real-time & API-Driven Applications
+          </li>
+        </ul>
+      </div>
+
+      <div className="mt-10 flex justify-center sm:justify-start">
+        <a
+          href="#contact"
+          className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300"
+        >
+          Let's Connect
+        </a>
+      </div>
+    </section>
   );
 };
 

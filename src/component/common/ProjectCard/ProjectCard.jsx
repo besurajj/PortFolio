@@ -31,7 +31,7 @@ const projects = [
 
 const ProjectCards = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background px-6 py-10">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-zinc-900  to-black px-6 py-10">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {projects.map((project) => (
           <motion.div

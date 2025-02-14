@@ -18,7 +18,7 @@ const Skills = () => {
   return (
     <motion.section
       id="skills"
-      className="w-full flex flex-col items-center justify-center min-h-screen bg-gradient-to-br to-gray-800 text-white p-6"
+      className="w-full flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-black to-zinc-900 text-white p-6"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}

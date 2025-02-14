@@ -6,7 +6,7 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="w-full bg-[#12343b] text-white shadow-md">
+    <header className="w-full bg-zinc-900 text-white shadow-md">
       <nav className="flex justify-between items-center p-4 max-w-7xl mx-auto w-full ">
 
 
@@ -56,7 +56,7 @@ const Header = () => {
                         animate={{ opacity: 1, y: 0 }} 
                         exit={{ opacity: 0, y: 20, scale: 0.9 }} 
                         transition={{ duration: 0.3, ease: "easeInOut" }} 
-                        className="md:hidden flex flex-col items-center bg-opacity-60 backdrop-blur-lg text-white space-y-8 py-16 absolute w-full h-screen top-16 left-0 shadow-lg text-[12vw] mt-5"
+                        className="md:hidden flex flex-col font-[font2] items-center bg-opacity-60 backdrop-blur-lg text-white space-y-8 py-16 absolute w-full h-screen top-16 left-0 shadow-lg text-[12vw] mt-3 tracking-tight"
                     >
                         <li>
                             <a
