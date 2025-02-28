@@ -11,6 +11,7 @@ import Home from "../../../pages/private/Home/Home";
 import FloatingMenu from "../../HandButton/FloatingMenu";
 import aiVideo from "../../../../assets/ai.mp4";
 import aiFace from "../../../../assets/aiFace1.mp4";
+// import robotGreet from "../../../../assets/robotGreet.mp4";
 
 const PrimaryLayout = () => {
   const { scrollYProgress } = useScroll();
@@ -50,20 +51,21 @@ const PrimaryLayout = () => {
             src={aiVideo}
             className="absolute inset-0 w-full h-full p-2 lg:p-10 object-cover bg-gradient-to-b from-zinc-900 to-black "
           />
-
           {/* Smooth Transition from Home to About */}
           <div className="absolute inset-0 bg-gradient-to-b from-zinc-900 to-black opacity-80 rounded-2xl"></div>
-
           {/* About Component */}
-          <div className="relative flex flex-col z-10 lg:left-0 border-2 lg:mx-10">
+          <div className="relative flex flex-col z-10 lg:left-0 lg:mx-5">
             <About />
           </div>
-            <div className="border-2 z-10 max-w-5xl hidden flex-col text-start md:w-[80%] sm:w-[90%] md:p-10 lg:w-[50vh] lg:h-screen lg:mx-20 lg:block">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam
-              temporibus provident nostrum quisquam qui necessitatibus maxime
-              mollitia ullam doloremque vero alias tempore beatae in, dolore,
-              laboriosam facilis totam odit ab.
+          <div className=" z-10 max-w-5xl hidden flex-col text-start md:w-[80%] sm:w-[90%] md:p-10 lg:w-[50vh] lg:h-full lg:block box-border">
+            <div className="flex flex-col text-center font-[font1] text-[8rem] leading-tight box-border lg:p-0 -tracking-tighter text-[#58C4DC]">
+              <span>R</span>
+              <span>E</span>
+              <span>A</span>
+              <span>C</span>
+              <span>T</span>
             </div>
+          </div>
         </section>
 
         <section

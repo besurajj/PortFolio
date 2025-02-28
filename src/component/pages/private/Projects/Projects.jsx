@@ -31,45 +31,50 @@ const projects = [
 ];
 
 const Projects = () => {
-    const constraintsRef = useRef(null);
+  const constraintsRef = useRef(null);
   return (
-    <>
-    </>
-    // <section
-    //   id="projects"
-    //   className="min-h-screen flex flex-col items-center justify-center px-6 py-1 text-white"
-    // >
-    //   {/* Section Title */}
-    //   <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12">
-    //     My Projects
-    //   </h2>
+    // <>
+    // </>
+    <section
+      id="projects"
+      className="min-h-screen flex flex-col items-center justify-center px-6 py-1 text-white"
+    >
+      {/* Section Title */}
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12">
+        My Projects
+      </h2>
 
-    //   {/* Projects Grid */}
-    //   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl"
-    //       ref={constraintsRef}>
-    //     {projects.map((project) => (
-    //         <div className="radial-gradient(50% 50% at 50% 50%, #121212 0, #000000 100%) p-1 rounded-xl shadow-lg shadow-cyan-500/50">
-    //       <motion.div
-    //         key={project.id}
-    //         whileHover={{ scale: 1.05 }}
-    //         whileTap={{ scale: 0.95 }}
-    //         className="p-6 bg-[#191919] bg-opacity-60 backdrop-blur-lg rounded-xl text-center flex flex-col items-center"
-    //         dragConstraints = {constraintsRef}
-            
-    //       >
-    //         {/* Icon */}
-    //         <div className="mb-4">{project.icon}</div>
+      {/* Projects Grid */}
+      <div
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl"
+        ref={constraintsRef}
+      >
+        {projects.map((project) => (
+          <div className="radial-gradient(50% 50% at 50% 50%, #121212 0, #000000 100%) p-1 rounded-xl shadow-lg shadow-cyan-500/50">
+            <motion.div
+              key={project.id}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="p-6 bg-[#191919] bg-opacity-60 backdrop-blur-lg rounded-xl text-center flex flex-col items-center"
+              dragConstraints={constraintsRef}
+            >
+              {/* Icon */}
+              <div className="mb-4">{project.icon}</div>
 
-    //         {/* Project Title */}
-    //         <h3 className="text-xl font-semibold text-[#8686AC]">{project.title}</h3>
+              {/* Project Title */}
+              <h3 className="text-xl font-semibold text-[#8686AC]">
+                {project.title}
+              </h3>
 
-    //         {/* Description */}
-    //         <p className="mt-2 text-gray-300 text-sm sm:text-base">{project.description}</p>
-    //       </motion.div>
-    //       </div>
-    //     ))}
-    //   </div>
-    // </section>
+              {/* Description */}
+              <p className="mt-2 text-gray-300 text-sm sm:text-base">
+                {project.description}
+              </p>
+            </motion.div>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 };
 

@@ -8,7 +8,7 @@ const About = () => {
         About Me
       </h2>
 
-      <h3 className="text-2xl text-purple-400 font-semibold mb-4 text-center sm:text-left lg:text-3xl">
+      <h3 className="text-2xl text-purple-400 font-semibold mb-4 text-center sm:text-left lg:text-3xl p-3 lg:p-0">
         Passionate MERN Stack Developer & React Enthusiast
       </h3>
 
