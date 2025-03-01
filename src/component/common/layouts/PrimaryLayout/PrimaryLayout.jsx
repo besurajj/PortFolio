@@ -70,7 +70,7 @@ const PrimaryLayout = () => {
 
         <section
           id="skill"
-          className="min-h-screen flex items-center justify-center"
+          className="min-h-screen flex items-center bg-gradient-to-b from-zinc-900 to-black justify-center"
         >
           <Skills />
         </section>

@@ -15,7 +15,7 @@ const iconClass = "text-6xl"; // Define a constant for icon size and styling
 
 const categories = [
   {
-    name: "Languages",
+    name: "Languages I Craft With",
     skills: [
       {
         name: "JavaScript",
@@ -28,7 +28,7 @@ const categories = [
     ],
   },
   {
-    name: "Frontend",
+    name: "Frontend Frameworks I Love",
     skills: [
       {
         name: "React",
@@ -53,7 +53,7 @@ const categories = [
     ],
   },
   {
-    name: "Backend",
+    name: "My Backend Powerhouse",
     skills: [
       {
         name: "Node.js",
@@ -66,7 +66,7 @@ const categories = [
     ],
   },
   {
-    name: "Database",
+    name: "Databases That Fuel My Projects",
     skills: [
       {
         name: "MongoDB",
@@ -95,20 +95,41 @@ const Skills = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
-      <h2 className="text-4xl font-bold text-center mb-6">My Skills</h2>
+      <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl lg:mt-0 font-bold bg-gradient-to-r from-gray-300 via-gray-500 to-gray-300 bg-clip-text text-transparent leading-tight text-center mt-5 w-full lg:text-center m-6 uppercase">
+        My Skills
+      </h2>
 
-      <div className="flex flex-col gap-6 w-full max-w-6xl max-h- justify-center">
+      <div className="flex flex-col gap-6 w-full max-w-6xl justify-center">
         {categories.map((category, index) => (
           <motion.div
             key={index}
-            className="bg-accent p-6 lg:h-[15vh] rounded-xl shadow-lg flex flex-col items-start text-left border-2 cursor-pointer overflow-hidden relative w-full"
+            className="relative bg-accent p-6 lg:h-[15vh] rounded-xl shadow-lg flex flex-col items-start text-left border-2 border-transparent cursor-pointer overflow-hidden w-full"
             onMouseEnter={() => setHoveredCategory(index)}
             onMouseLeave={() => setHoveredCategory(null)}
           >
-            <h3 className="text-2xl lg:mt-3 font-semibold">{category.name}</h3>
-
+            {/* 🔥 Inner Glowing Border Animation */}
             <motion.div
-              className="absolute top-0 left-0 h-full bg-gray-800 p-4 rounded-xl shadow-lg flex flex-row gap-6 items-center w-full"
+              className="absolute inset-0 rounded-xl pointer-events-none"
+              animate={{
+                borderColor: "#4F46E5", // Border color remains fixed
+              }}
+              transition={{ duration: 0.3 }}
+              style={{
+                borderWidth: "2px",
+                borderStyle: "solid",
+                borderImage:
+                  "linear-gradient(90deg, transparent, skyblue, transparent) 1", // Green lighting effect on the border
+                animation: "moveLightBorder 2s linear infinite", // Animation for moving the lighting effect
+              }}
+            />
+
+            <h3 className="text-2xl lg:mt-3 font-semibold relative z-0">
+              {category.name}
+            </h3>
+
+            {/* Hover effect for skills */}
+            <motion.div
+              className="absolute top-0 left-0 h-full bg-gray-800 p-4 rounded-xl shadow-lg flex flex-row gap-6 items-center w-full z-10"
               initial={{ x: "-100%", opacity: 0 }}
               animate={{
                 x: hoveredCategory === index ? "0%" : "-100%",
