@@ -8,10 +8,7 @@ import Skills from "../../../pages/private/Skills/Skills";
 import { useScroll } from "framer-motion";
 import { motion } from "framer-motion";
 import Home from "../../../pages/private/Home/Home";
-import FloatingMenu from "../../HandButton/FloatingMenu";
 import aiVideo from "../../../../assets/ai.mp4";
-import aiFace from "../../../../assets/aiFace1.mp4";
-import Background3D from "../../Animation/backgroudf-3d";
 
 // import robotGreet from "../../../../assets/robotGreet.mp4";
 

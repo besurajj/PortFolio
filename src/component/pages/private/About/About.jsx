@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-import blockgame from "../../../../assets/blockgame.png";
 const About = () => {
   return (
     <section className="w-full max-w-5xl flex flex-col text-start md:w-[80%] sm:w-[90%] md:p-10 lg:left-0 lg:w-full">
