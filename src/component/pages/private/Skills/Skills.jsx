@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { motion } from "framer-motion";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { FaJs, FaNodeJs, FaReact, FaDocker, FaBootstrap } from "react-icons/fa";
 import {
   SiTypescript,
@@ -86,16 +86,24 @@ const categories = [
 
 const Skills = () => {
   const [hoveredCategory, setHoveredCategory] = useState(null);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  // Detect screen size changes
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <motion.section
       id="skills"
-      className="w-full flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-black to-zinc-900 text-white p-6"
+      className="w-full flex flex-col items-center justify-around min-h-screen bg-gradient-to-b from-black to-zinc-900 text-white p-6"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
-      <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl lg:mt-0 font-bold bg-gradient-to-r from-gray-300 via-gray-500 to-gray-300 bg-clip-text text-transparent leading-tight text-center mt-5 w-full lg:text-center m-6 uppercase">
+      <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-bold bg-gradient-to-r from-gray-300 via-gray-500 to-gray-300 bg-clip-text text-transparent leading-tight text-center mt-5 w-full uppercase">
         My Skills
       </h2>
 
@@ -103,47 +111,84 @@ const Skills = () => {
         {categories.map((category, index) => (
           <motion.div
             key={index}
-            className="relative bg-accent p-6 lg:h-[15vh] rounded-xl shadow-lg flex flex-col items-start text-left border-2 border-transparent cursor-pointer overflow-hidden w-full"
-            onMouseEnter={() => setHoveredCategory(index)}
-            onMouseLeave={() => setHoveredCategory(null)}
+            className={`relative bg-accent p-6 lg:h-[15vh] rounded-xl shadow-lg flex flex-col items-start text-left border-transparent z-10 cursor-pointer overflow-hidden w-full transition-all duration-500 ease-in-out justify-center ${
+              isMobile && hoveredCategory === index ? "h-auto" : "h-[15vh]"
+            }`}
+            onMouseEnter={() => !isMobile && setHoveredCategory(index)}
+            onMouseLeave={() => !isMobile && setHoveredCategory(null)}
+            onClick={() =>
+              isMobile &&
+              setHoveredCategory(hoveredCategory === index ? null : index)
+            }
           >
-            {/* 🔥 Inner Glowing Border Animation */}
+            {/* 🔥 Animated Border */}
             <motion.div
-              className="absolute inset-0 rounded-xl pointer-events-none"
-              animate={{
-                borderColor: "#4F46E5", // Border color remains fixed
-              }}
+              className="absolute inset-0 rounded-xl pointer-events-none justify-between"
+              animate={{ borderColor: "#4F46E5" }}
               transition={{ duration: 0.3 }}
               style={{
                 borderWidth: "2px",
                 borderStyle: "solid",
                 borderImage:
-                  "linear-gradient(90deg, transparent, skyblue, transparent) 1", // Green lighting effect on the border
-                animation: "moveLightBorder 2s linear infinite", // Animation for moving the lighting effect
+                  "linear-gradient(90deg, transparent, skyblue, transparent) 1",
+                animation: "moveLightBorder 2s linear infinite",
               }}
             />
 
-            <h3 className="text-2xl lg:mt-3 font-semibold relative z-0">
-              {category.name}
-            </h3>
-
-            {/* Hover effect for skills */}
-            <motion.div
-              className="absolute top-0 left-0 h-full bg-gray-800 p-4 rounded-xl shadow-lg flex flex-row gap-6 items-center w-full z-10"
-              initial={{ x: "-100%", opacity: 0 }}
+            {/* 🔥 Category Title */}
+            <motion.h3
+              className={`text-2xl font-semibold relative transition-all ${
+                isMobile ? "z-10 opacity-0" : "z-20"
+              }`}
               animate={{
-                x: hoveredCategory === index ? "0%" : "-100%",
-                opacity: hoveredCategory === index ? 1 : 0,
+                marginBottom: isMobile && hoveredCategory === index ? 10 : 0,
+                opacity: isMobile && hoveredCategory === index ? 0 : 1,
               }}
-              transition={{ duration: 0.5, ease: "easeInOut" }}
             >
-              {category.skills.map((skill, skillIndex) => (
-                <div key={skillIndex} className="flex flex-col items-center">
-                  {skill.icon}
-                  <span className="text-sm font-medium mt-2">{skill.name}</span>
-                </div>
-              ))}
-            </motion.div>
+              {category.name}
+            </motion.h3>
+
+            {/* 🔥 Skill List Animation */}
+            <AnimatePresence>
+              {hoveredCategory === index && (
+                <motion.div
+                  className={`flex ${
+                    isMobile
+                      ? "flex-col"
+                      : "absolute top-0 left-0 flex-row gap-6"
+                  } bg-gradient-to-r from-gray-900 to-black p-4 rounded-xl shadow-lg items-center w-full z-20`}
+                  {...(isMobile
+                    ? {
+                        initial: { height: 0, opacity: 0 },
+                        animate: { height: "auto", opacity: 1 },
+                        exit: { height: 0, opacity: 0 },
+                      }
+                    : {
+                        initial: { x: "-100%", opacity: 0 },
+                        animate: { x: "0%", opacity: 1 },
+                        exit: { x: "-100%", opacity: 0 },
+                      })}
+                  transition={{ duration: 0.5, ease: "easeInOut" }}
+                >
+                  <div className="flex flex-wrap gap-6 justify-between z-40">
+                    {category.skills.map((skill, skillIndex) => (
+                      <motion.div
+                        key={skillIndex}
+                        className="flex flex-col items-center"
+                        initial={{ y: -20, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{ delay: 0.1 * skillIndex }}
+                      >
+                        {skill.icon}
+                        <span className="text-sm font-medium mt-2">
+                          {skill.name}
+                        </span>
+                      </motion.div>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </motion.div>
         ))}
       </div>

@@ -11,6 +11,8 @@ import Home from "../../../pages/private/Home/Home";
 import FloatingMenu from "../../HandButton/FloatingMenu";
 import aiVideo from "../../../../assets/ai.mp4";
 import aiFace from "../../../../assets/aiFace1.mp4";
+import Background3D from "../../Animation/backgroudf-3d";
+
 // import robotGreet from "../../../../assets/robotGreet.mp4";
 
 const PrimaryLayout = () => {
@@ -24,12 +26,12 @@ const PrimaryLayout = () => {
       <main className="w-full min-h-screen flex flex-col bg-gradient-to-b from-zinc-900 to-black text-white">
         {/* <FloatingMenu/> */}
         {/* Header (Sticky) */}
+        {/* <Background3D /> */}
         <header className="w-full bg-opacity-30 fixed top-0 z-50">
           <div className="max-w-7xl mx-auto p-4">
             <Header />
           </div>
         </header>
-
         {/* Sections */}
         <section
           id="home"
@@ -37,7 +39,6 @@ const PrimaryLayout = () => {
         >
           <Home />
         </section>
-
         <section
           id="about"
           className="relative min-h-screen flex items-center lg:justify-between"
@@ -67,28 +68,24 @@ const PrimaryLayout = () => {
             </div>
           </div>
         </section>
-
         <section
           id="skill"
           className="min-h-screen flex items-center bg-gradient-to-b from-zinc-900 to-black justify-center"
         >
           <Skills />
         </section>
-
         <section
           id="projects"
           className="min-h-screen flex items-center justify-center bg-gradient-to-b from-zinc-900 to-black"
         >
           <Projects />
         </section>
-
         <section
           id="contact"
           className="min-h-screen flex items-center justify-center bg-gradient-to-b from-black to-zinc-900"
         >
           <Contact />
         </section>
-
         {/* Footer */}
         {/* <footer className="w-full bg-opacity-30 text-center py-4 bg-gradient-to-b from-zinc-900 to-black"> */}
         <Footer />
