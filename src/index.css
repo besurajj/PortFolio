@@ -10,7 +10,12 @@
 }
  */
 
- 
+ html,
+ body{
+overflow-x: hidden;
+/* overflow-y: scroll; */
+background-color: black;
+ }
 
  @font-face {
   font-family: font1;

@@ -20,7 +20,7 @@ const PrimaryLayout = () => {
 
   return (
     <>
-      <main className="w-full min-h-screen flex flex-col bg-gradient-to-b from-zinc-900 to-black text-white">
+      <main className="w-full min-h-screen  flex flex-col bg-gradient-to-b from-zinc-900 to-black text-white">
         {/* <FloatingMenu/> */}
         {/* Header (Sticky) */}
         {/* <Background3D /> */}

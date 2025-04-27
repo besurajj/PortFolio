@@ -50,13 +50,19 @@ const Projects = () => {
         ref={constraintsRef}
       >
         {projects.map((project) => (
-          <div className="radial-gradient(50% 50% at 50% 50%, #121212 0, #000000 100%) p-1 rounded-xl shadow-lg shadow-cyan-500/50">
+          <div className="radial-gradient(circle at center, #0a0a0a 0%, #1a1a1a 50%, #121212 100%) p-4 rounded-xl ">
             <motion.div
               key={project.id}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="p-6 bg-[#191919] bg-opacity-60 backdrop-blur-lg rounded-xl text-center flex flex-col items-center"
+              whileHover={{ scale: 1.08, rotate: 5 }}
+              whileTap={{ scale: 0.95, rotate: -5 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              className="p-6 bg-[#191919] bg-opacity-60 backdrop-blur-lg rounded-xl text-center flex flex-col items-center justify-center h-[220px] 
+    shadow-lg shadow-cyan-500/50 transform transition-all ease-in-out relative overflow-hidden"
               dragConstraints={constraintsRef}
+              style={{
+                background:
+                  "radial-gradient(circle at center, #0f0f0f 0%, #1b1b1b 50%, #121212 70%, #000000 100%)",
+              }}
             >
               {/* Icon */}
               <div className="mb-4">{project.icon}</div>
