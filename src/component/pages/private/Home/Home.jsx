@@ -76,7 +76,7 @@ const Home = () => {
           <motion.div className="relative flex items-center justify-center p-7">
             <div className="w-[60vw] sm:w-[40vw] md:w-[35vw] lg:w-[30vw] max-w-md h-auto aspect-square rounded-full overflow-hidden shadow-lg shadow-zinc-900">
               <img
-                src="/public/WorkCartoons.jpeg"
+                src="/WorkCartoons.jpeg"
                 alt="Profile"
                 className="w-full h-full object-cover"
               />
