@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useRef } from "react";
 // import TextCircleAnimation from "../../../common/TextCircleAnimation/TextCircleAnimation";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
+import Contact from "../Contact/Contact";
 const Home = () => {
+  const navigate = useNavigate();
   const text =
     "Hey there! 👋 I'm Suraj, a passionate MERN Stack Developer with a love for building dynamic, scalable, and user-friendly web applications. With expertise in MongoDB, Express.js, React, Node.js, and a deep enthusiasm for React, I enjoy crafting seamless digital experiences that merge functionality with aesthetics.";
 
@@ -13,6 +16,15 @@ const Home = () => {
   const letterVariants = {
     hidden: { opacity: 0, y: 0 },
     visible: { opacity: 1, y: 50 },
+  };
+
+  const contactRef = useRef(null);
+
+  const scrollToContact = (e) => {
+    e.preventDefault(); // Prevent default anchor behavior
+    document.getElementById("contact")?.scrollIntoView({
+      behavior: "smooth",
+    });
   };
 
   return (
@@ -88,7 +100,12 @@ const Home = () => {
       {/* Buttons */}
       <div className="flex flex-col sm:flex-row justify-start items-start md:justify-start mt-2 absolute bottom-0 lg:mb-5 lg:w-full w-[20vh] mb-5 lg:mx-6">
         {/* <a href="#projects"> */}
-        <button className="px-4 py-2 bg-[#272757] hover:bg-[#505081] rounded-full w-full sm:w-auto lg:w-[15vh] lg:text-xl lg:mx-11">
+        <button
+          onClick={scrollToContact}
+          className="px-4 py-2 bg-[#272757] hover:bg-[#505081] rounded-full 
+                w-full sm:w-auto lg:w-[15vh] lg:text-xl lg:mx-11
+                transition-colors duration-300"
+        >
           Hire me
         </button>
         {/* </a> */}

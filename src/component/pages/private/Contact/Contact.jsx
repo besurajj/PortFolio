@@ -42,18 +42,20 @@ const contactLinks = [
   },
   {
     name: "Download Resume",
-    href: "/path-to-your-resume.pdf",
+    href: "/My-Resume.pdf",
     bg: "bg-yellow-500 hover:bg-yellow-400",
     icon: <FaDownload className="text-xl" />,
     download: true,
   },
 ];
 
-const Contact = () => {
+const Contact = (props, ref) => {
   return (
     <section
+      ref={ref}
       id="contact"
-      className="min-h-screen flex flex-col items-center justify-center text-white px-4 py-16"
+      className="min-h-screen flex flex-col items-center
+      justify-center text-white px-4 py-16"
     >
       <motion.h2
         initial={{ opacity: 0, y: -30 }}
@@ -63,7 +65,6 @@ const Contact = () => {
       >
         Get in Touch
       </motion.h2>
-
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -73,7 +74,6 @@ const Contact = () => {
         Connect with me on any platform and let’s build something great
         together!
       </motion.p>
-
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -106,15 +106,6 @@ const Contact = () => {
           </motion.a>
         ))}
       </motion.div>
-
-      {/* <motion.footer
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2 }}
-        className="text-gray-500 text-sm text-center mt-8"
-      >
-        &copy; 2025 Suraj | All Rights Reserved
-      </motion.footer> */}
     </section>
   );
 };
