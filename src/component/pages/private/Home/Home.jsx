@@ -35,7 +35,8 @@ const Home = () => {
           Hi, I'm Suraj
         </h1>
         <span className="text-lg sm:text-xl md:text-2xl mt-3 text-gray-200 w-full">
-          MERN Stack Developer | React Enthusiast
+          {/* React Enthusiast | Full-Feature Builder */}
+          React Developer with MERN Stack Expertise
         </span>
         <motion.p
           variants={textVariants}
@@ -99,16 +100,25 @@ const Home = () => {
 
       {/* Buttons */}
       <div className="flex flex-col sm:flex-row justify-start items-start md:justify-start mt-2 absolute bottom-0 lg:mb-5 lg:w-full w-[20vh] mb-5 lg:mx-6">
-        {/* <a href="#projects"> */}
         <button
           onClick={scrollToContact}
-          className="px-4 py-2 bg-[#272757] hover:bg-[#505081] rounded-full 
-                w-full sm:w-auto lg:w-[15vh] lg:text-xl lg:mx-11
-                transition-colors duration-300"
+          className="relative px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 rounded-full 
+              w-full sm:w-auto lg:w-[15vh] lg:text-xl lg:mx-11
+              transition-all duration-300 ease-in-out
+              shadow-lg hover:shadow-xl
+              transform hover:scale-105
+              text-white font-medium
+              group overflow-hidden"
         >
-          Hire me
+          <span className="relative z-10">Hire me</span>
+          <span
+            className="absolute inset-0 bg-gradient-to-r from-purple-600 to-indigo-700 
+                   opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full"
+          ></span>
+          <span className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
+            <span className="animate-ping absolute h-8 w-8 rounded-full bg-purple-400 opacity-75"></span>
+          </span>
         </button>
-        {/* </a> */}
       </div>
     </section>
   );

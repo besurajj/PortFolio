@@ -34,12 +34,12 @@ const contactLinks = [
     bg: "bg-red-500 hover:bg-red-400",
     icon: <FaEnvelope className="text-xl" />,
   },
-  {
-    name: "Phone",
-    href: "tel:+919780400874",
-    bg: "bg-purple-600 hover:bg-purple-500",
-    icon: <FaPhone className="text-xl" />,
-  },
+  // {
+  //   name: "Phone",
+  //   href: "tel:+919780400874",
+  //   bg: "bg-purple-600 hover:bg-purple-500",
+  //   icon: <FaPhone className="text-xl" />,
+  // },
   {
     name: "Download Resume",
     href: "/My-Resume.pdf",
