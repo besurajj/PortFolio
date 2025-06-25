@@ -130,10 +130,10 @@ const About = () => {
           What I Bring to the Table
         </h3>
         <ul className="text-gray-300 mt-4 space-y-2 text-start text-lg mx-5 lg:text-xl lg:ml-0 lg:text-start sm:text-left ">
-          <li className="whitespace-normal leading-relaxed">
+          {/* <li className="whitespace-normal leading-relaxed">
             🔹 <span className="text-purple-400">5+ client projects</span>{" "}
             delivered on time with React.js
-          </li>
+          </li> */}
           <li className="whitespace-normal leading-relaxed">
             🔹 Strong in{" "}
             <span className="text-purple-400">state management</span> (Redux,
