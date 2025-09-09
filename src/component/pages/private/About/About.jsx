@@ -23,7 +23,6 @@
 //         </span>
 //         , I love crafting high-performance, user-friendly digital experiences.
 //       </p>
-
 //       <div className="mt-6">
 //         <h3 className="text-2xl font-[font1] uppercase lg:text-3xl text-white font-semibold text-center sm:text-left ">
 //           Why React?
@@ -76,7 +75,7 @@ import { motion } from "framer-motion";
 const About = () => {
   return (
     <section className="w-full max-w-5xl flex flex-col text-start md:w-[80%] sm:w-[90%] md:p-10 lg:left-0 lg:w-full">
-      <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-5xl lg:-mx-0 lg:mt-0 font-bold bg-gradient-to-r from-gray-300 via-gray-500 to-gray-300 bg-clip-text text-transparent leading-tight text-center mt-5 w-full lg:text-start m-6 uppercase">
+      <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-5xl lg:-mx-0 lg:mt-0 font-bold bg-gradient-to-r from-gray-300 via-gray-500 to-gray-300 bg-clip-text text-transparent leading-tight text-center mt-5 w-full lg:text-start lg:m-6 uppercase">
         About Me
       </h2>
 

@@ -99,7 +99,7 @@ const Home = () => {
       </div>
 
       {/* Buttons */}
-      <div className="flex flex-col sm:flex-row justify-start items-start md:justify-start mt-2 absolute bottom-0 lg:mb-5 lg:w-full w-[20vh] mb-5 lg:mx-6">
+      {/* <div className="flex flex-col sm:flex-row justify-start items-start md:justify-start mt-2 absolute bottom-0 lg:mb-5 lg:w-full w-[20vh] mb-5 lg:mx-6">
         <button
           onClick={scrollToContact}
           className="relative px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 rounded-full 
@@ -119,7 +119,7 @@ const Home = () => {
             <span className="animate-ping absolute h-8 w-8 rounded-full bg-purple-400 opacity-75"></span>
           </span>
         </button>
-      </div>
+      </div> */}
     </section>
   );
 };

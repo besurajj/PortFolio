@@ -42,7 +42,7 @@ const contactLinks = [
   // },
   {
     name: "Download Resume",
-    href: "/My-Resume.pdf",
+    href: "/Suraj's (resume).pdf",
     bg: "bg-yellow-500 hover:bg-yellow-400",
     icon: <FaDownload className="text-xl" />,
     download: true,
